@@ -1,0 +1,187 @@
+:root{
+    --bg-color1: black;
+    --bg-color2: #343a40;
+    --aqi-1: #d4e157;
+    --aqi-2: #ffee58;
+    --aqi-3: #ffca28;
+    --aqi-4: #ff7043;
+    --aqi-5: #ef5350;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--bg-color1);
+    color: white;
+    font-family: sans-serif;
+    padding: 0 15px;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 15px 0;
+    & #city_input{
+        background-color: var(--bg-color2);
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 25px;
+        color: white;
+        &:focus{outline: none;
+        
+        }
+    }
+    & #searchBtn{
+        border: none;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 25px;
+        background-color: white;
+        cursor: pointer;
+        color: gray;
+    }
+    & #locationBtn{
+        border: none;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 25px;
+        background-color:rgb(142, 142, 243);
+        cursor: pointer;
+        color:white;
+    }
+
+}
+
+
+
+.card{
+    background-color: var(--bg-color2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    & p{
+        font-size: 14px;
+        color: #999;
+    }
+    & h2{
+        font-size: 32px;
+        font-weight: 500;
+
+    }
+}
+
+.weather-data{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    & .weather-left{
+        grid-column: span 1;
+        & .current-weather{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & h2{
+                margin: 7px 0;
+            }
+            & p{
+                color: white;
+            }
+        }
+        & .card-footer p{
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        & .forecast-item {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+            margin-bottom: 15px;
+            & .icon-wrapper{
+                display: flex;
+                align-items: center;
+            }
+          
+
+
+        }
+      
+    }
+    & .weather-right{
+        grid-column: span 3;
+        & h2{
+            margin-bottom: 10px;
+
+        }
+        & .highlights{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 15px;
+
+            & .card:nth-of-type(1),
+            & .card:nth-of-type(2){
+                grid-column: span 2;
+            }
+
+            & .card-head{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+              
+                & .air-index {
+                    padding: 5px 10px;
+                    border-radius: 15px;
+                    color: black; /* Ensure text is readable */
+                    font-weight: bold;
+                }
+                
+                .aqi-1 { background-color: var(--aqi-1); } /* Green (Good) */
+                .aqi-2 { background-color: var(--aqi-2); } /* Yellow (Moderate) */
+                .aqi-3 { background-color: var(--aqi-3); } /* Orange (Unhealthy for sensitive groups) */
+                .aqi-4 { background-color: var(--aqi-4); } /* Red-Orange (Unhealthy) */
+                .aqi-5 { background-color: var(--aqi-5); } /* Red (Very Unhealthy) */
+                
+                }
+
+                & .air-indices{
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    place-items: center;
+                }
+                & p{
+                    text-align: center;
+                }
+            }
+
+
+            & .sunrise-sunset{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                & .item{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    & h2{
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            & .card-item{
+                display: flex;
+                justify-content: space-between;
+                
+
+            }
+
+        }
+    }
+  
